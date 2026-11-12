@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>iamakshay</title>
+  <meta name="description" content="Akshay — 12 years in enterprise data & AI, now testing how far one person with AI can go." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='46' fill='%23ff5a1f'/><text x='50' y='68' font-size='52' text-anchor='middle' font-family='Arial' font-weight='700' fill='%23111315'>a</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- floating background blobs -->
+  <div class="blobs" aria-hidden="true">
+    <span class="blob b1"></span>
+    <span class="blob b2"></span>
+    <span class="blob b3"></span>
+  </div>
+
+  <header class="nav">
+    <a class="logo" href="#top" aria-label="Home">a<span>.</span></a>
+    <nav>
+      <a href="#help">help</a>
+      <a href="#lab">lab</a>
+      <a href="#path">path</a>
+      <a href="#hi">say hi</a>
+    </nav>
+    <button class="shuffle" id="shuffle" type="button" title="Shuffle colors">
+      <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span class="sr">Shuffle colors</span>
+    </button>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero">
+      <!-- EDIT: the roles you're open to -->
+      <p class="eyebrow status reveal"><span class="pulse"></span> open to AI product &amp; data/AI leadership roles</p>
+      <h1 class="big reveal" aria-label="I'm Akshay">
+        <span class="line">i'm</span>
+        <span class="line name" id="name">Akshay</span>
+      </h1>
+      <p class="lede reveal">
+        12 years in enterprise <mark class="hl">data &amp; AI</mark>. These days I'm testing
+        how far <mark class="hl hl2">one person with AI</mark> can go, and how it changes
+        the way we <mark class="hl hl3">work, build and live</mark>.
+      </p>
+      <div class="cta-row reveal">
+        <a class="btn-sm solid" href="#hi">get in touch</a>
+        <a class="btn-sm" href="https://www.linkedin.com/in/hakshayan" target="_blank" rel="noopener">linkedin ↗</a>
+        <!-- Drop your CV in this folder as cv.pdf and this button appears -->
+        <a class="btn-sm" id="cvBtn" href="cv.pdf" download hidden>download CV ↓</a>
+      </div>
+      <div class="hero-meta reveal">
+        <span class="pill">🕒 my time: <b id="clock">--:--</b></span>
+        <!-- EDIT: where you'd work -->
+        <span class="pill">📍 Chennai · open to Dubai &amp; remote</span>
+      </div>
+
+      <div class="stickers" aria-hidden="true">
+        <span class="sticker s1">AI</span>
+        <span class="sticker s2">&lt;/&gt;</span>
+        <span class="sticker s3">→</span>
+      </div>
+    </section>
+
+    <!-- HOW I CAN HELP -->
+    <section id="help" class="section">
+      <h2 class="reveal">how i can help</h2>
+      <p class="sub reveal">three things I'm good at, usually in this order.</p>
+      <div class="tiles">
+        <article class="tile reveal" data-c="1">
+          <div class="num">01</div>
+          <h3>fix the data first</h3>
+          <p>Most AI projects stall on messy, unowned data. I set up master data, governance and quality checks so the AI has something solid to stand on.</p>
+          <p class="proof">J&amp;J MDM rollout · 68% steward productivity</p>
+        </article>
+        <article class="tile reveal" data-c="2">
+          <div class="num">02</div>
+          <h3>prototype in days</h3>
+          <p>I build working prototypes with coding agents like Claude Code, so leaders can see an idea run before anyone writes a business case.</p>
+          <p class="proof">Cognizant GenAI &amp; agentic AI PoCs</p>
+        </article>
+        <article class="tile reveal" data-c="3">
+          <div class="num">03</div>
+          <h3>turn it into a product</h3>
+          <p>Roadmaps, governance and adoption: taking a promising pilot and making it something 70+ brands actually use.</p>
+          <p class="proof">Alshaya transactions data product</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- GREATEST HITS -->
+    <section class="section hits">
+      <h2 class="reveal">greatest hits</h2>
+      <p class="sub reveal">a few numbers I'm quietly proud of.</p>
+      <div class="stats">
+        <div class="stat reveal" data-c="1"><b data-count="68" data-suffix="%">0</b><span>more productive data stewards at J&amp;J</span></div>
+        <div class="stat reveal" data-c="2"><b data-count="232" data-suffix="h">0</b><span>manual hours saved every month</span></div>
+        <div class="stat reveal" data-c="3"><b data-count="70" data-suffix="+">0</b><span>brands on one transactions data product</span></div>
+        <div class="stat reveal" data-c="4"><b data-count="15" data-prefix="$" data-suffix="M">0</b><span>consulting revenue from a trucking platform</span></div>
+      </div>
+    </section>
+
+    <!-- LAB -->
+    <section id="lab" class="section">
+      <h2 class="reveal">the lab</h2>
+      <p class="sub reveal">what one person with AI can build. All built in 2026 with AI coding agents.</p>
+      <div class="lab">
+        <article class="exp reveal">
+          <div class="exp-head"><span class="tag">agentic AI app</span><span class="took">⏱ 6 days to a working app</span></div>
+          <h3>VoiceInPublic™</h3>
+          <dl>
+            <div><dt>problem</dt><dd>Creators know they should post on LinkedIn, but finding something worth saying, in their own voice, eats hours.</dd></div>
+            <div><dt>built</dt><dd>A team of AI agents: a trend scout reads Reddit, news, RSS and Hacker News, a strategist picks angles, and a writer drafts posts that are checked for facts and voice. Nothing goes out until the creator approves that exact post.</dd></div>
+            <div><dt>result</dt><dd>Trademark filed, landing page built, and an invite-only beta with 5 testers is being set up.</dd></div>
+          </dl>
+        </article>
+        <article class="exp reveal">
+          <div class="exp-head"><span class="tag">AI + data</span><span class="took">⏱ about 2 weeks</span></div>
+          <h3>Signal Desk</h3>
+          <dl>
+            <div><dt>problem</dt><dd>Solo YouTube creators track competitors and trends by hand, across dozens of tabs.</dd></div>
+            <div><dt>built</dt><dd>A research desk that pulls channels, transcripts and comments into one database, makes them searchable by meaning, and uses AI for daily briefs, content gaps and idea generation.</dd></div>
+            <div><dt>result</dt><dd>A 10-tab workspace for one creator. Data foundation first, AI on top: the same pattern I used in enterprise.</dd></div>
+          </dl>
+        </article>
+        <article class="exp reveal">
+          <div class="exp-head"><span class="tag">chrome extension</span><span class="took">⏱ 1 day</span></div>
+          <h3>YouScript</h3>
+          <dl>
+            <div><dt>problem</dt><dd>Getting a clean transcript out of a YouTube video, or a Short, takes far too many clicks.</dd></div>
+            <div><dt>built</dt><dd>A Chrome extension that adds a Copy transcript button. It falls back to the caption track when YouTube's panel isn't there, and runs with no server and no tracking.</dd></div>
+            <div><dt>result</dt><dd>Built, tested and packaged for the Chrome Web Store, with listing and privacy policy, in a single day.</dd></div>
+          </dl>
+        </article>
+        <article class="exp reveal">
+          <div class="exp-head"><span class="tag">iOS app</span><span class="took">⏱ 1 day</span></div>
+          <h3>FeedCut</h3>
+          <dl>
+            <div><dt>problem</dt><dd>Instagram and YouTube are useful until Reels, Shorts and endless feeds swallow the evening.</dd></div>
+            <div><dt>built</dt><dd>An iPhone app that opens Instagram and YouTube with the addictive parts stripped out before they ever appear. You choose filters like "block Reels", and it shows how much time you spend on each platform, stored only on your phone.</dd></div>
+            <div><dt>result</dt><dd>A working SwiftUI app with switchable filters and a daily usage dashboard.</dd></div>
+          </dl>
+        </article>
+        <article class="exp reveal">
+          <div class="exp-head"><span class="tag">iOS app</span><span class="took">⏱ 1 day</span></div>
+          <h3>Solace</h3>
+          <dl>
+            <div><dt>problem</dt><dd>Focus and sleep sounds are the same loop every time, whatever you're actually doing.</dd></div>
+            <div><dt>built</dt><dd>An iPhone app that generates music live from your day: the weather, the time, your walking pace and your Apple Watch heart rate. A horizon scene moves with it, and it rains on screen when it rains outside.</dd></div>
+            <div><dt>result</dt><dd>A real-time sound engine written from scratch, where every input can be switched off and location is rounded to about 1 km.</dd></div>
+          </dl>
+        </article>
+        <article class="exp reveal">
+          <div class="exp-head"><span class="tag">website</span><span class="took">⏱ one sitting</span></div>
+          <h3>This site</h3>
+          <dl>
+            <div><dt>problem</dt><dd>A personal site usually means weeks of design and code.</dd></div>
+            <div><dt>built</dt><dd>The whole site, written with Claude Code from my LinkedIn profile.</dd></div>
+            <div><dt>result</dt><dd>Responsive, light &amp; dark mode, no templates.</dd></div>
+          </dl>
+        </article>
+      </div>
+    </section>
+
+    <!-- PATH -->
+    <section id="path" class="section path">
+      <div class="now-card reveal">
+        <div class="now-head">
+          <h2>the path so far</h2>
+          <span class="stamp">click a stop</span>
+        </div>
+        <ol class="timeline">
+          <li>
+            <button type="button" class="stop"><span class="yr">2010s</span><span class="where">Biotech → sales &amp; marketing</span></button>
+            <p>M.Tech in Food &amp; Nutritional Biotechnology at SRM, then technical sales at MRK Engineers and roles at LifeCell and Fortis in Chennai.</p>
+          </li>
+          <li>
+            <button type="button" class="stop"><span class="yr">2015</span><span class="where">Thirdware · Ford</span></button>
+            <p>Built requirements for a vehicle data platform for Ford, then went onsite in South Africa to map and retire 280+ legacy batch modules.</p>
+          </li>
+          <li>
+            <button type="button" class="stop"><span class="yr">2017</span><span class="where">Cognizant · Product Owner</span></button>
+            <p>Product strategy across trucking, automotive, logistics and blockchain. Built 0-to-1 internal products, including one that saved $1.4M.</p>
+          </li>
+          <li>
+            <button type="button" class="stop"><span class="yr">2020</span><span class="where">Johnson &amp; Johnson · Dubai</span></button>
+            <p>Scaled the Enterprise MDM platform to the Middle East &amp; West Africa. The features I built were adopted back globally. 5 awards in 3 years.</p>
+          </li>
+          <li>
+            <button type="button" class="stop"><span class="yr">2023</span><span class="where">Alshaya · Senior PM</span></button>
+            <p>Owned the Global Transactions data product: the shared source of truth for 70+ brands across MENA.</p>
+          </li>
+          <li>
+            <button type="button" class="stop"><span class="yr">2024</span><span class="where">Cognizant · Data &amp; AI</span></button>
+            <p>Led GenAI and agentic AI consulting, and built working prototypes with Claude Code and Codex for client workshops.</p>
+          </li>
+          <li class="current">
+            <button type="button" class="stop"><span class="yr">now</span><span class="where">Experimenting with AI</span></button>
+            <p>Running experiments on how far one person with AI can go, and writing up what I learn.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section about">
+      <h2 class="reveal">a bit about me</h2>
+      <div class="about-grid">
+        <div class="card about-card reveal">
+          <p class="pull">
+            Most AI projects don't fail because of the model. They fail because the data
+            underneath is a mess and nobody owns it.
+          </p>
+          <p>
+            I've spent 12 years fixing that layer at J&amp;J, Alshaya and Cognizant. Now I
+            spend my days building working prototypes with coding agents like Claude Code,
+            so an idea is real in days, not quarters.
+          </p>
+          <p>
+            I trained in biotech and food technology before I ever touched data, so I watch
+            closely how AI is changing food, health and supply chains.
+          </p>
+        </div>
+        <ul class="facts reveal">
+          <li><span>🧬</span> started in: <b>biotech &amp; food tech</b></li>
+          <li><span>🗣️</span> speaks: <b>English, Tamil, Hindi</b></li>
+          <li><span>🏆</span> collected: <b>8 company awards</b></li>
+          <li><span>🧭</span> certified: <b>Scrum Master &amp; Product Owner</b></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- SAY HI -->
+    <section id="hi" class="section hi">
+      <h2 class="reveal">say hi!</h2>
+      <p class="sub reveal">Stuck between a clear business problem and an unclear data or AI path? Message me. I read everything.</p>
+      <div class="hi-row reveal">
+        <button class="btn primary" id="copyEmail" type="button" data-email="akshayan2006@gmail.com">
+          <span class="btn-label">akshayan2006@gmail.com</span>
+          <span class="btn-hint">click to copy</span>
+        </button>
+      </div>
+      <div class="links reveal">
+        <a class="chip" href="https://www.linkedin.com/in/hakshayan" target="_blank" rel="noopener">linkedin ↗</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <p>built with Claude Code · © <span id="year"></span> iamakshay.com</p>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
