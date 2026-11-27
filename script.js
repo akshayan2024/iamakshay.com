@@ -3,8 +3,8 @@
 
   /* ---- palettes for the shuffle button ---- */
   const palettes = [
-    ["#ff5a1f", "#ffc400", "#00b386", "#2f6bff", "#00c2d1", "#c6f432"], // signal
-    ["#2f6bff", "#c6f432", "#00c2d1", "#ff5a1f", "#ffc400", "#00b386"], // electric
+    ["#ff5a1f", "#ffc400", "#00b386", "#2563eb", "#00c2d1", "#c6f432"], // signal
+    ["#2563eb", "#c6f432", "#00c2d1", "#ff5a1f", "#ffc400", "#00b386"], // electric
     ["#e63946", "#f4a261", "#2a9d8f", "#264653", "#e9c46a", "#457b9d"], // earth
     ["#00b386", "#ffd60a", "#3a86ff", "#fb5607", "#06d6a0", "#8ac926"], // field
     ["#ff7a00", "#e0e0e0", "#4cc9f0", "#4361ee", "#90be6d", "#f9c74f"], // steel
@@ -15,14 +15,33 @@
     if (!Number.isNaN(saved) && palettes[saved]) pIndex = saved;
   } catch (_) {}
 
+  /* pick dark or white text for each colored surface, whichever reads better */
+  const lum = (hex) => {
+    const n = parseInt(hex.replace("#", ""), 16);
+    return [n >> 16, (n >> 8) & 255, n & 255]
+      .map((v) => { v /= 255; return v <= .03928 ? v / 12.92 : Math.pow((v + .055) / 1.055, 2.4); })
+      .reduce((a, v, i) => a + v * [.2126, .7152, .0722][i], 0);
+  };
+  const ratio = (a, b) => (Math.max(a, b) + .05) / (Math.min(a, b) + .05);
+  function fixInk() {
+    const css = getComputedStyle(root);
+    const pick = (tok) => {
+      const L = lum(css.getPropertyValue(tok).trim());
+      return ratio(L, lum("#111315")) >= ratio(L, 1) ? "#111315" : "#ffffff";
+    };
+    document.querySelectorAll("[data-c]").forEach((el) => el.style.setProperty("--on", pick(`--c${el.dataset.c}`)));
+    document.querySelectorAll(".btn.primary, .btn-sm.solid").forEach((el) => el.style.setProperty("--on", pick("--c1")));
+  }
   const applyPalette = (i) => {
     palettes[i].forEach((c, n) => root.style.setProperty(`--c${n + 1}`, c));
   };
   applyPalette(pIndex);
+  fixInk();
 
   document.getElementById("shuffle").addEventListener("click", () => {
     pIndex = (pIndex + 1) % palettes.length;
     applyPalette(pIndex);
+    fixInk();
     try { localStorage.setItem("iak-palette-v2", String(pIndex)); } catch (_) {}
     toast(["palette swapped", "new palette", "colors: shuffled", "fresh look"][pIndex % 4]);
   });
@@ -55,25 +74,6 @@
   tick();
   setInterval(tick, 15000);
 
-  /* ---- reveal on scroll ---- */
-  const els = document.querySelectorAll(".reveal");
-  if ("IntersectionObserver" in window) {
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach((e) => {
-        if (e.isIntersecting) {
-          e.target.classList.add("in");
-          io.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.12 });
-    els.forEach((el, i) => {
-      el.style.transitionDelay = `${(i % 6) * 60}ms`;
-      io.observe(el);
-    });
-  } else {
-    els.forEach((el) => el.classList.add("in"));
-  }
-
   /* ---- timeline: click a stop to open it ---- */
   const stops = document.querySelectorAll(".timeline li");
   stops.forEach((li) => {
@@ -94,7 +94,8 @@
   const show = (el, v) => { el.textContent = `${el.dataset.prefix || ""}${v}${el.dataset.suffix || ""}`; };
   const countUp = (el) => {
     const end = +el.dataset.count;
-    if (reduce) return show(el, end);
+    if (reduce) return;
+    show(el, 0);
     const start = performance.now(), dur = 1200;
     const step = (now) => {
       const p = Math.min((now - start) / dur, 1);
